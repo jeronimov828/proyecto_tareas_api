@@ -5,9 +5,10 @@ import { authMiddleware } from "../middlewares/authMiddleware";
 
 let routerTarea = Router();
 
-routerTarea.post("/tareas",authMiddleware, tareaController.create);
-routerTarea.get("/listarTareas",authMiddleware, tareaController.index);
-routerTarea.put("/editarTareas:id",authMiddleware, tareaController.update);
-routerTarea.get("/listarTareas/:id",authMiddleware, tareaController.get);
+routerTarea.post("/tareas", authMiddleware, tareaController.create);
+routerTarea.get("/listarTareas", authMiddleware, tareaController.index);
+routerTarea.put("/editarTareas/:id", authMiddleware, tareaController.update);
+routerTarea.get("/listarTareas/:id", authMiddleware, tareaController.get);
+routerTarea.delete("/borrarTareas/:id", authMiddleware, tareaController.delete);
 
 export default routerTarea;
